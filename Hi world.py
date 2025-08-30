@@ -7,7 +7,7 @@ int = 17
 float = 1.65
 boolean = None
 
-print(f"\nMi nombre es {str} y tengo {int} años.\n")
+print(f"\nMi nombre es {str} y tengo {int} años.")
 # print(f"\n Tengo {int} años.")
 print(f"\n Mido {float} metros.")
 # print(boolean)
