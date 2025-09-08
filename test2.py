@@ -53,8 +53,8 @@ if option1 == "escapar" :
                     win = False
 
             elif option1_1_1_1 == "circulo" :
-                print("\n\nTomaste el circulo, el mango evita que tu mano se derrita por el material viscoso. Puedes intentar derretir los motores o la pared de la nave.")
-                option1_1_1_1_2 = input("\n\tQue derretiras? MOTORES o PARED: ").lower()
+                print("\n\nTomaste el circulo, el mango evita que tu mano se derrita por el material viscoso. Puedes intentar derretir los motores, el suelo o la pared de la nave.")
+                option1_1_1_1_2 = input("\n\tQue derretiras? PARED, SUELO o MOTORES: ").lower()
 
                 if option1_1_1_1_2 == "motores" :
                     print("\n\nIntentas derretir los motores, los cuales se detienen por un momento antes de resumir su actividad, parece que el acido no es lo suficientemente efectivo contra lo motores, pero quizas puedas derretir la pared y huir. La nave ha ascendido a la alta atmosfera")
@@ -83,21 +83,107 @@ if option1 == "escapar" :
                     else :
                         print("\n\nTardas demasiado en decidir, el acido de tu herramienta lentamente empieza a corroer tu mano, muriendo en el proceso.")
                         win = False
+                
+                elif option1_1_1_1 == "suelo" :
+                    print("\n\nUtilizas el acido para derretir el suelo, creando un agujero por el que puedes caer, una habitacion aparentemente vacia se encuentra bajo a ti.")
+                    option1_1_1_1_3_2 = input("\n\tQue haras? CAER o ESPERAR: ").lower()
+
+                    if option1_1_1_1_3_2 == "caer" :
+                        print("\n\nCaes por el agujero, aterrizando en una habitacion vacia, puedes ver una señal que indica la presencia de capsulas de escape en el siguiente pasillo, las cuales usas para escapar.")
+                        win = True
+                    elif option1_1_1_1_3_2 == "esperar" :
+                        print("\n\nDecides esperar a que los guardias te encuentren, los cuales te detienen antes de que puedas hacer algo.")
+                        win = False
 
                 else :
                     print("\n\nEl acido de tu herramienta lentamente empieza a corroer tu mano, muriendo en el proceso.")
                     win = False
             else :
-                print("\n\n No tomas ninguna herramienta, los guardias aliens te encuentran y te terminan.")
+                print("\n\n No tomas ninguna herramienta, los guardias aliens te encuentran y te terminan.") 
+                win = False 
+        
+        elif option1_1_1 == "armeria" :
+            print("\n\nEntras a la armeria y te encuentras con armas y objetos extraños que nunca has visto antes. Un baston de un metal extraño y un objeto esferico con una superficie oscura y reflejante llaman tu atencion.") 
+            option1_1_3 = input("Que objeto tomaras?, BASTON o ESFERA: ").lower()
+
+            if option1_1_3 == "baston" :
+                print("\n\nTomas el baston, el cual tiene un brillo azulado y parece emitir una ligera vibracion. Escuchas pasos rapidos acercandose. Puedes intentar usarlo para defenderte o buscar una salida.")
+                option1_1_3_1 = input("\n\tQue haras? DEFENDERTE o BUSCAR: ").lower()
+
+                if option1_1_3_1 == "defenderte" :
+                    print("\n\nTe preparas para defenderte, los guardias entran a la habitacion y te ven con el baston, uno de ellos intenta atacarte. El baston reacciona a la amenaza, una luz parpadea sobre un boton en el.")
+                    option1_1_3_1_1 = input("\n\tQue haras? ATACAR o PRECIONAR BOTON: ").lower()
+
+                    if option1_1_3_1_1 == "atacar" :
+                        print("\n\nAtacas al guardia, el baston emite una descarga electrica que lo derriba, los otros guardias entran en alerta y te atacan, no eres rival para ellos y eres detenido.")
+                        win = False
+                    elif option1_1_3_1_1 == "precionar boton" :
+                        print("\n\nPrecionas el boton, el baston emite una luz brillante que aturde a los guardias, aprovechando la oportunidad sales corriendo por el pasillo y encuentras una salida de emergencia, logras escapar de la nave y regresar a la tierra.")
+                        win = True
+                    else :
+                        print("\n\nTardas demasiado en decidir y los guardias te encuentran y terminan contigo.")
+                        win = False
+                    
+                elif option1_1_3_1 == "buscar" :
+                    print("\n\nDecides buscar una salida, encontrando una puerta que lleva a una sala de control. En ella un grupo de aliens controlan una parte de la nave, los guardias entran en la sala tras de ti. Puedes intentar atacar a los aliens o esperar a los guardias.")
+                    option1_1_3_1_1 = input("\n\tQue haras? ATACAR o ESPERAR: ").lower()
+
+                    if option1_1_3_1_1 == "atacar" :
+                        print("\n\nAtacas a los aliens indefensos, los cuales, temiendo por su vida, te apuntan a las capsulas de escape. Logras entrar a una y escapar de la nave, cayendo en un bosque lejano a tu casa.")
+                        win = True
+                    elif option1_1_3_1_1 == "esperar" :
+                        print("\n\nDecides esperar a los guardias, los cuales te encuentran y te detienen antes de que puedas hacer algo.")
+                        win = False
+                    else :
+                        print("\n\nNo eliges ninguna acción válida y los guardias te encuentran y terminan contigo.")
+                        win = False
+                else :
+                    print("\n\nNo tomas ninguna acción válida y los guardias te encuentran y terminan contigo.")
+                    win = False
+
+            elif option1_1_3 == "esfera" :
+                print("\n\nTomas la esfera, puedes sentir un boton bajo su superficie, si esta es un arma, quien sabe que pasara cuando aprietes el boton, puedes intentar presionar el boton ahora o esperar a presionarlo cuando entren los guardias.")
+                option1_1_3_2 = input("\n\tQue haras? PRECIONAR o ESPERAR: ").lower()
+
+                if option1_1_3_2 == "precionar" :
+                    print("\n\nPresionas el boton, la esfera lanza dos rayos de luz a dos paredes de la armeria, los objetos detras de las paredes se hacen visibles, una pared conduce al exterior de la nave, la otra a una sala experimentacion.")
+                    option1_1_3_2_1 = input("\n\tPor cual puerta iras? EXTERIOR o EXPERIMENTACION: ").lower()
+
+                    if option1_1_3_2_1 == "exterior" :
+                        print("\n\nSales por la puerta que lleva al exterior, cayendo en la alta atmosfera, muriendo en el proceso.")
+                        win = False
+                    elif option1_1_3_2_1 == "experimentacion" :
+                        print("\n\nSales por la puerta que lleva a la sala de experimentacion. Puedes escuchar rujidos y gritos a lo lejos. Puntos brillantes se mueven en las oscuridad, son ojos, y antes de que puedas reaccionar, puedes sentir tu pecho siendo abierto por una garra.")
+                        win = False
+                    else :
+                        print("\n\nTardas demasiado en decidir, los guardias te encuentran y terminan contigo. ")
+                        win = False
+                        
+                elif option1_1_3_2 == "esperar" :
+                    print("\n\nDecides esperar a los guardias, precionando el boton en el momento en el que entran, una explosion de luz los ciega temporalmente. Puedes precionar el boton de nuevo o intentar huir.")
+                    option1_1_3_2_2 = input("\n\tQue haras? PRECIONAR o HUIR: ").lower()
+
+                    if option1_1_3_2_2 == "precionar" :
+                        print("\n\nPresionas el boton de nuevo, la esfera emite un rayo de luz que elimina a los guardias, aprovechando la oportunidad sales corriendo por el pasillo y encuentras una salida de emergencia, logras escapar de la nave y regresar a la tierra.")
+                        win = True
+                    elif option1_1_3_2_2 == "huir" :
+                        print("\n\nIntentas huir, pero los guardias se recuperan y te alcanzan, terminandote antes de que puedas hacer algo.")
+                        win = False
+                    else :
+                        print("\n\nTardas demasiado en decidir, los guardias se recuperan y terminan contigo.")
+                        win = False
+
+                else :
+                    print("\n\nNo eliges ninguna acción, y los guardias entran a la sala y terminan contigo.")
+                    win = False
+
+            else :
+                print("\n\nNo eliges ninguna acción, y los guardias entran a la sala y terminan contigo.")
                 win = False
 
-           #Falta aqui
-
-        elif option1_1_1 == "armeria" :
-            print()
-
         else :
-            print()
+            print("\n\n No eliges ninguna puerta, y los guardias te encuentran y terminan contigo. ")
+            win = False
 
     elif option1_1 == "derecho" :
         print("\n\nTe diriges por el pasillo derecho, al final del pasillo ves dos puertas grandes que se abren, llevandote a una enorme sala de control y a una habitacion llena de camillas con cadenas.") 
@@ -126,14 +212,14 @@ if option1 == "escapar" :
                         win = False
 
                 elif option1_1_2_2_2 == "seguir huyendo": 
-                    print("\n\nDecides huir e ignorar la suplicas de la otra persona y continuas por el pasillo.")
-                    option1_1_2_2_2_1 = input("\n\nQue haras? CONTINUAR o REGRESAR:").lower()
+                    print("\n\nDecides huir e ignorar la suplicas de la otra persona y continuas por el pasillo. Encuentras una salida de emergencia y un hangar.")
+                    option1_1_2_2_2_1 = input("\n\nQue camino seguiras? EMERGENCIA o HANGAR:").lower()
 
-                    if option1_1_2_2_2_1 == "continuar":
-                        print("\n\nSigues corriendo por el pasillo, pero te topas con un grupo de guardias que te atrapan y terminan contigo.")
-                        win = False
-                    elif option1_1_2_2_2_1 == "regresar":
-                        print("\n\nDecides regresar y ayudar al otro humano, pero al hacerlo los guardias te encuentran y terminan contigo.")
+                    if option1_1_2_2_2_1 == "emergencia":
+                        print("\n\nTe diriges a la salida de emergencia y logras escapar de la nave, cayendo en un bosque lejano a tu casa.")
+                        win = True
+                    elif option1_1_2_2_2_1 == "hangar":
+                        print("\n\nTe diriges al hangar, pero al entrar puedes ver a otros aliens intentando abordar las naves, los guardias te atrapan y terminan contigo.")
                         win = False
                     else:
                         print("\n\nTardas demasiado en decidir y los guardias te encuentran y terminan contigo.")
@@ -155,19 +241,19 @@ if option1 == "escapar" :
                         print("\n\nIntentas quitarle el control de la nave a los aliens, pero no tienes idea de como hacerlo, estrellando la nave contra la tierra.") 
                         win = False
                     elif option1_1_2_2_1 == "pulsar boton":
-                        print("\n\nDecides pulsar uno de los botones de la consola, pero no sabes que hace y activas una alarma. Los guardias llegan y terminan contigo.")
+                        print("\n\nDecides pulsar uno de los botones de la consola, desestabilizando la nave y causando que se desplace fuera de control. Estrellas la nave contra la tierra.")
                         win = False
                     else:
                         print("\n\nTardas demasiado en decidir y los guardias te encuentran y terminan contigo. ") 
                         win = False
-                
+
                 elif option1_1_2_2 == "tomar control": 
                     print("\n\nCorres hacia la consola, quitando a los aliens del camino y tomando control de la nave, puedes intentar regresar a la tierra o estrellar la nave en algun lugar alejado.")
                     option1_1_2_2_1 = input("\n\nQue haras? REGRESAR a la tierra o ESTRELLAR la nave: ").lower()
 
                     if option1_1_2_2_1 == "estrellar":
-                        print("\n\nIntentas regresar a la tierra, pero no sabes como pilotear la nave y terminas estrellandote en el oceano, muriendo en el proceso. ") 
-                        win = False
+                        print("\n\nDecides estrellar la nave en un lugar alejado, alejandote de la civilizacion y asegurandote de que nadie mas sufra a manos de los aliens. ") 
+                        win = True
                     elif option1_1_2_2_1 == "regresar":
                         print("\n\nDecides regresar a la tierra, pero no sabes como pilotear la nave y terminas estrellandote en el oceano, muriendo en el proceso. ") 
                         win = False
@@ -183,30 +269,94 @@ if option1 == "escapar" :
                 print("\n\nTardas demasiado en decidir y los guardias te encuentran y terminan contigo. ") 
                 win = False
     
-        elif option1_1_2 == "CAMILLAS": 
-            print("\n\nEntras a la habitacion llena de camillas, varias de ellas tienen humanos atados, puedes intentar liberarlos o buscar algun objeto que te ayude a escapar.")
+        elif option1_1_2 == "camillas": 
+            print("\n\nEntras a la habitacion llena de camillas, varias de ellas tienen humanos atados, puedes intentar liberarlos o buscar algun objeto que te ayude a escapar.") 
+            option2 = input("que haras?, LIBERARLOS O BUSCAR: ") 
 
-            #Aqui falta continuar la historia.
+            if option2 == "liberarlos" : 
+                print("Optas por liberar a los humanos atados, uno de ellos dice haber sido transportado por las intalaciones cuando experimentaron con el y recuerda ciertos caminos en la nave, ofrece guiarte al hangar para escapar, los otros humanos no parecen confiar en el y escapan por el sistema de ventilacion.") 
+                option2_2 = input("¿Qué plan eliges?, VENTILACION O HANGAR") 
+
+                if option2_2 == "ventilacion" : 
+                    print("Decides ignorar al guía y seguir por el conducto de ventilación, los otros humanos y tu avanzan hasta llegar a una interseccion, tu, como su liberador, eres seleccionado para elegir.")
+                    option2_2_2 = input("que elejiras? IZQUIERDA O DERECHA: ") 
+
+                    if option2_2_2 == "izquierda" :
+                        print("Eliges el camino de la izquierda. Mientras mas avanzan, un calor insoportable empieza a emanar de las paredes del conducto. El aire se vuelve denso y difícil de respirar. Al llegar a una rejilla puedes ver que estan sobre los motores, pero es demasiado tarde para hacer algo, el calor intenso y la falta de oxigeno hacen que tu y los otros humanos caigan inconscientes.")
+                        win = False 
+                    elif option2_2_2 == "derecha" : 
+                        print("Eliges el camino de la derecha. El conducto se vuelve mas frio y facil de respirar, al llegar a una rejilla puedes ver que estan sobre una salida de emergencia, logran salir de la nave y regresar a la tierra.") 
+                        win = True
+                    else : 
+                        print("tardas en tomar una decision y los guardias te atrapan")
+                        win = False
+            
+                elif option2_2 == "hangar" : 
+                    print("Decides seguir al guia, dejando a los demas humanos atras y dirigiendote al hangar, al llegar te preguntas a ti mismo si entrar a la puerta o buscar otra salia")
+                    option2_2_2 = input("que haras? ENTRAR o BUSCAR: ")
+
+                    if option2_2_2 == "entrar" :
+                        print("Entras al hangar junto al guia, pero al entrar puedes ver a otros aliens intentando abordar las naves, los guardias te atrapan y terminan contigo.")
+                        win = False
+                    elif option2_2_2 == "buscar" :
+                        print("Decides buscar otra salida, dejando al guia atras. Encuentras una salida de emergencia y logras escapar de la nave, cayendo en un bosque lejano a tu casa.")
+                        win = True
+                    else :
+                        print("tardas en tomar una decision y los guardias te atrapan")
+                        win = False
+
+                else : 
+                    print("tardas en tomar una decision y los guardias te atrapan")
+
+            elif option2 == "buscar" : 
+                print("Decides buscar algo que te ayude a escapar. Mientras exploras la habitación, encuentras un objeto brillante en el suelo. Al acercarte, te das cuenta de que es un dispositivo de comunicación alienígena.")
+                option2_2 = input("¿Qué harás? USAR o IGNORAR: ")
+
+                if option2_2 == "usar" :
+                    print("Usas el dispositivo de comunicación para enviar una señal de socorro, los otros humanos siguen pidiendo tu ayuda.")
+                    option2_2_2 = input("¿Qué harás? ESPERAR o AYUDAR: ")
+
+                    if option2_2_2 == "esperar" :
+                        print("Decides esperar a que lleguen refuerzos, ignorando a los humanos atrapados. Despues de un tiempo puedes escuchar pasos en el pasillo, parece que la señal de alerta fue detectada por los guardias de la nave.")
+                        win = False
+                    elif option2_2_2 == "ayudar" :
+                        print("Decides liberar a los humanos atrapados, los cuales no estan felices ante tu falta de compasion momentos antes. Eres retenido por los humanos y dejado en una camilla.")
+                        win = False
+                    else:
+                        print("\n\nNo tomas ninguna acción válida y los guardias te encuentran y terminan contigo.")
+                        win = False
+
+                elif option2_2 == "ignorar" :
+                    print("Decides ignorar el dispositivo y seguir buscando. Una pequeña esfera metálica llama tu atención.")
+                    option2_2_2 = input("¿Qué harás? TOMAR o DEJAR: ")
+
+                    if option2_2_2 == "tomar" :
+                        print("Tomas la esfera y una luz brillante emana de ella, al recuperar tu vista, te encuentras en un lugar conocido, la esfera te ha teletransportado a la tierra.")
+                        win = True
+                    elif option2_2_2 == "dejar" :
+                        print("Decides dejar la esfera y seguir buscando, pero no encuentras nada más de utilidad. Los guardias entran a la sala y te encuentran.")
+                        win = False
+                    else :
+                        print("\n\nNo tomas ninguna acción válida y los guardias te encuentran y terminan contigo.")
+                        win = False
+                
+                else:
+                    print("Decides seguir buscando, pero no encuentra nada más de utilidad. Los guardias entran a la sala y te encuentran.")
+                    win = False
+
+            else:
+                print("\n\n No tomas ninguna acción válida y los guardias te encuentran y terminan contigo.")
+                win = False
+
+        else:
+            print("\n\nNo eliges ninguna acción, y los guardias entran a la sala y terminan contigo.")
+            win = False
+
     else:
-         print("\n\nNo eliges ningun pasillo, y los guardias te encuentran y terminan contigo. ")
-         win = False
+       print("\n\nNo eliges ningun pasillo, y los guardias te encuentran y terminan contigo. ")
+       win = False  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Mi parte :v (Luis) ↓
 
 elif option1 == "esperar" :
     print("\n\nDecides esperar. Los aliens regresan y comienzan a discutir sobre ti en su idioma extraño. Finalmente, parecen dudar sobre qué hacer contigo.")
@@ -221,8 +371,8 @@ elif option1 == "esperar" :
             option1_2_1_1 = input("\n\tQue haras? OBSERVAR o TOCAR: ").lower()
 
             if option1_2_1_1 == "observar" :
-                print("\n\nLa pantalla cambia, mostrando imagenes de calma y destruccion. Los aliens parecen interesados en tu reaccion.")
-                option1_2_1_1_1 = input("\n\tCuales te interesan mas? CALMA o DESTRUCCION: ").lower()
+                print("\n\nLa pantalla cambia, mostrando imagenes de calma, destruccion y neutralidad. Los aliens parecen interesados en tu reaccion.")
+                option1_2_1_1_1 = input("\n\tCuales te interesan mas? CALMA, DESTRUCCION o NEUTRALIDAD: ").lower()
 
                 if option1_2_1_1_1 == "calma" :
                     print("\n\nLa imagen de calma crea un pequeño portal frente a ti. Parece que los aliens terminaron su investigacion contigo, quien sabe que habra tras ese portal.")
@@ -251,6 +401,19 @@ elif option1 == "esperar" :
                     else :
                         print("\n\nTu mente colapsa entre señales contradictorias.")
                         win = False
+                
+                elif option1_2_1_1_1 == "neutralidad" :
+                    print("\n\nLa imagen de neutralidad muestra un paisaje vacio y desolado. Los aliens parecen interesados en tu reaccion.")
+                    option1_2_1_1_1_3 = input("\n\tComo reaccionas? INTRIGADO o ABURRIDO: ").lower()
+
+                    if option1_2_1_1_1_3 == "intrigado" :
+                        print("\n\nTu intriga es suficiente para los aliens, los cuales estudiaban el cerebro humano, parecen satisfechos con sus investigaciones y te devuelven a la tierra luego de borrar tu memoria.")
+                        win = True
+
+                    elif option1_2_1_1_1_3 == "aburrido" :
+                        print("\n\nLa imagen de neutralidad no despierta tu interes. Los aliens deciden seguir investigando contigo.")
+                        win = False
+
                 else :
                     print("\n\nTu reaccion es inentendible, los aliens te consideran fallido y apagan la sala contigo dentro.")
                     win = False
@@ -286,16 +449,18 @@ elif option1 == "esperar" :
                     else :
                         print("\n\nEres lanzado a una zona de desechos.")
                         win = False
+
                 else :
                     print("\n\nLos aliens vieron tu mano en el boton y no aprecian tu accion. Eres confinado para observacion.")
                     win = False
+
             else :
                 print("\n\nApartas la vista de la pantalla, tu falta de cooperacion te muestra como un especimen inutil y eres llevado a la zona de desechos.")
                 win = False
 
         elif option1_2_1 == "y" :
-            print("\n\nTras la puerta 'Y' hay jaulas con criaturas extraterrestres, los aliens te dejan frente a dos de ellas, una parecida a un insecto, la otra parecida a un anfibio.")
-            option1_2_1_2 = input("\n\tCual elegiras? INSECTO o ANFIBIO: ").lower()
+            print("\n\nTras la puerta 'Y' hay jaulas con criaturas extraterrestres, los aliens te dejan frente a dos de ellas, una parecida a un insecto, otra parecida a un anfibio y la ultima no tiene una forma definida.")
+            option1_2_1_2 = input("\n\tCual elegiras? INSECTO, ANFIBIO o SIN FORMA: ").lower()
 
             if option1_2_1_2 == "insecto" :
                 print("\n\nEstiras la mano hacia la jaula del insecto, el cual acerca su cabeza a tu mano.")
@@ -330,6 +495,7 @@ elif option1 == "esperar" :
                         win = False
                 else :
                     print("\n\nNo haces nada, el insecto consigue morderte y mueres por el veneno.")
+                    win = False
 
             elif option1_2_1_2 == "anfibio" :
                 print("\n\nTe acercas a la jaula del anfibio, el cual te observa con curiosidad, te sientes atraido a acercar tu mano.")
@@ -362,9 +528,52 @@ elif option1 == "esperar" :
                     else :
                         print("\n\nNo tomas ninguna accion, los aliens deciden que eres un sujeto no cooperativo.")
                         win = False
+
                 else :
                     print("\n\nNo haces nada, los aliens deciden que eres un sujeto no cooperativo.")
                     win = False
+
+            elif option1_2_1_2 == "sin forma" :
+                print("\n\nTe acercas a la jaula de la criatura sin forma, la cual se mueve y cambia su estructura constantemente.")
+                option1_2_1_2_3 = input("\n\tQue haras? TOCAR o OBSERVAR: ").lower()
+
+                if option1_2_1_2_3 == "tocar" :
+                    print("\n\nAl tocar la criatura esta se afferra a ti, su masa gelatinosa comienza a cubrir tu mano.")
+                    option1_2_1_2_3_1 = input("\n\tQue haras? QUITARLA o DEJARLA: ").lower()
+
+                    if option1_2_1_2_3_1 == "quitarla" :
+                        print("\n\nIntentas quitar la criatura de tu mano, su forma amorfa le permite salir de la jaula y esta sale volando hacia los aliens, los cuales son absorbidos por ella, en la conmocion, logras escapar de la nave y regresar a la tierra.")
+                        win = True
+
+                    elif option1_2_1_2_3_1 == "dejarla" :
+                        print("\n\nDecides dejar a la criatura en paz, ella se acomoda en tu mano y parece estar tranquila. Eres consumido lentamente.")
+                        win = False
+                    else :
+                        print("\n\nNo tomas ninguna accion, la criatura te consume lentamente.")
+                        win = False
+
+                elif option1_2_1_2_3 == "observar" :
+                    print("\n\nObservas a la criatura, la cual cambia su forma constantemente, puedes ver como una parte de ella intenta escapar de la jaula, los aliens no parecen darse cuenta, quizas puedas alertarlos o dejar ir a la criatura.")
+                    option1_2_1_2_3_2 = input("\n\tQue haras? ALERTAR o DEJARLA: ").lower()
+
+                    if option1_2_1_2_3_2 == "alertar" :
+                        print("\n\nAlertas a los aliens del escape de la criatura, la cual es neutralizada poco despues. Los experimentos continuan pero tu cooperacion los lleva por un buen camino, tu memoria es borrada y vuelves a la tierra.")
+                        win = True
+                    elif option1_2_1_2_3_2 == "dejarla" :
+                        print("\n\nDecides no intervenir, distrayendo a los aliens momentaneamente, la criatura, sin embargo, no es capaz de entender tus acciones y te toma como su primera presa, los aliens consiguen terminarla con exito pero es muy tarde para ti.")
+                        win = False
+                    else :
+                        print("\n\nNo tomas ninguna accion, los aliens deciden que eres un sujeto no cooperativo.")
+                        win = False
+
+                else :
+                    print("\n\nNo haces nada, los aliens deciden que eres un sujeto no cooperativo.")
+                    win = False
+
+            else :
+                print("\n\nNo haces nada, los aliens deciden que eres un sujeto no cooperativo.")
+                win = False
+
         else :
             print("\n\nNo eliges ninguna puerta, te vuelven a sujetar a la camilla y te confinan para observacion.")
             win = False
@@ -408,6 +617,10 @@ elif option1 == "esperar" :
                     else :
                         print("\n\nLa simulacion se corrompe y quedas atrapado.")
                         win = False
+
+                else :
+                    print("\n\nLa simulacion se corrompe y quedas atrapado.")
+                    win = False
 
             elif option1_2_2_1 == "salir" :
                 print("\n\nConsigues escapar la simulacion, tu cuerpo transportado a una camara de mantenimiento.")
@@ -484,6 +697,7 @@ elif option1 == "esperar" :
                     else :
                         print("\n\nTu indecision molesta a los aliens.")
                         win = False
+
                 else :
                     print("\n\nLa consola no reconoce tu orden y bloquea el despegue.")
                     win = False
@@ -519,18 +733,23 @@ elif option1 == "esperar" :
                     else :
                         print("\n\nNo decides y el sistema te apaga por seguridad.")
                         win = False
+
                 else :
                     print("\n\nLa nave no responde a los controles.")
                     win = False
+
             else :
                 print("\n\nNo eres capaz de elegir una nave, los aliens se cansan de esperar.")
                 win = False
+
         else :
             print("\n\nNo eliges un compartimento, los aliens te confinan para observacion.")
             win = False
+
     else :
         print("\n\nLos aliens no entienden tu respuesta, te confinan para observacion.")
         win = False
+
 else :
     print("\n\nNo eliges una accion, los aliens te mantienen en animacion suspendida.")
     win = False
