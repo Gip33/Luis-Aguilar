@@ -3,11 +3,11 @@ import time
 import random
 os.system('cls')
 
-#title = ["E", "X", "A", "M", "E", "N"]
-#print("\n\n\t\t\t\t", end="")
-#for title1 in title:
-#    print(" ", title1, end="", flush=True)
-#    time.sleep(0.2)
+title = ["E", "X", "A", "M", "E", "N"]
+print("\n\n\t\t\t\t", end="")
+for title1 in title:
+    print(" ", title1, end="", flush=True)
+    time.sleep(0.2)
 exit = False
 while exit == False:
     print("1. Calculadora de Propinas 💵")
@@ -319,4 +319,5 @@ while exit == False:
         print(f"Estudiantes en el cuadro de honor: {honor}")
         input("Precione ENTER para salir a la pantalla de seleccion: ")
         os.system('cls')
+
 
