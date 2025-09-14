@@ -3,13 +3,14 @@ import time
 import random
 os.system('cls')
 
-title = ["E", "X", "A", "M", "E", "N"]
-print("\n\n\t\t\t\t", end="")
-for title1 in title:
-    print(" ", title1, end="", flush=True)
-    time.sleep(0.2)
 exit = False
 while exit == False:
+    title = ["E", "X", "A", "M", "E", "N"]
+    print("\n\n\t\t\t\t", end="")
+    for title1 in title:
+        print(" ", title1, end="", flush=True)
+        time.sleep(0.2)
+    print("\n\n")
     print("1. Calculadora de Propinas 💵")
     print("2. Conversor de Temperatura 🌡")
     print("3. Clasificador de Números ➕➖")
@@ -210,6 +211,19 @@ while exit == False:
 
     elif menu == 15:
         print("\n\n\tEJERCICIO 15")
+        matrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        add = 0
+        print(f"Matriz original: \n{matrix[0]}\n{matrix[1]}\n{matrix[2]}")
+        for row in matrix:
+            for element in row:
+                add += element
+        print(f"La suma de todos los números en la matriz es: {add}")
+        input("Precione ENTER para salir a la pantalla de seleccion: ")
+        os.system('cls')
 
     elif menu == 16:
         print("\n\n\tEJERCICIO 16")
@@ -319,5 +333,4 @@ while exit == False:
         print(f"Estudiantes en el cuadro de honor: {honor}")
         input("Precione ENTER para salir a la pantalla de seleccion: ")
         os.system('cls')
-
 
