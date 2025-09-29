@@ -1,0 +1,30 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: bisque;
+}
+h1,h2{
+    text-align: center;
+}
+img{
+    display: block;
+    width: 20%;
+    border: solid black;
+    margin: auto;
+}
+.ingredients{
+    background-color: aliceblue;
+    padding: 5px;
+    border: solid black;
+   
+}
+.instructions{
+    background-color: aliceblue;
+    padding: 5px;
+    border: solid black;
+    
+}
+.body{
+    background-color: beige;
+    padding: 30px;
+    border: double black;
+}
